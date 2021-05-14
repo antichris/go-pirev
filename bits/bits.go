@@ -1,7 +1,7 @@
 //go:generate stringer -type=Field
 
-// Package bits does the low (bit-)level  revision code
-// parsing and assembly.
+// Package bits does the low (bit-)level parsing and assembly of
+// new-style Raspberry Pi revision codes.
 package bits
 
 import (
@@ -10,7 +10,7 @@ import (
 	"math/bits"
 )
 
-// Parse a Raspberry Pi revision Code into a slice of Values.
+// Parse a Raspberry Pi revision code into a slice of values.
 func Parse(r Code) Values {
 	s := make(Values, NumTotal)
 	// HACK Seems crazy, but that's how integer overflow works.
@@ -27,12 +27,10 @@ type Code uint32
 // Values is an alias for a Value slice.
 type Values = []Value
 
-// The Value of a Field in a revision Code.
+// The Value of a Field in a revision code.
 type Value uint8
 
 const (
-	// _ Field = iota - 1 // To improve readability of the following
-
 	NoOvervoltage   Field = iota // Overvoltage disallowed
 	NoOTPPrograming              // OTP programming disallowed
 	NoOTPReading                 // OTP reading disallowed
@@ -56,9 +54,10 @@ const (
 
 // A Field of revision code.
 //
-// Keep in mind that this cannot have negative values, and f := Field(0)
-// overflows to f - 1 == Field(MaxUint). This means that you have to
-// compare f <= Last if/when iterating down from Last.
+// Keep in mind that, as an unsigned integer, Field cannot have negative
+// values, and `f := Field(0) - 1` overflows to `f == Field(MaxUint)`.
+// This means that you have to compare `f <= Last` if/when iterating
+// down from Last.
 type Field uint
 
 // Bitmask is an all-ones mask derived from the bitsize of the Field.
@@ -80,7 +79,7 @@ func (f Field) Validate(v Value) (err error) {
 
 // Naming ideas: assemble/compile/construct/synthesize
 
-// Assemble a slice of Values into a revision Code.
+// Assemble a slice of Values into a revision code.
 func Assemble(s Values) (r Code, err error) {
 	n := Field(len(s))
 	if n > NumTotal {
@@ -101,7 +100,7 @@ func Assemble(s Values) (r Code, err error) {
 }
 
 // ErrOverflow is returned when a function gets passed more Values than
-// TotalNumFields.
+// NumTotal.
 var ErrOverflow = errors.New("more Values than NumTotal")
 
 // bitmasks of Fields.
@@ -129,7 +128,7 @@ var bitsizes = [NumTotal]uint8{
 	Revision:        4,
 }
 
-// CodeBitsize of a Raspberry Pi revision code as a number of bits.
+// CodeBitsize is the number of bits in a Raspberry Pi revision code.
 const CodeBitsize = 32
 
 // "index out of range" means bitsizes not adding up to CodeBitsize.
