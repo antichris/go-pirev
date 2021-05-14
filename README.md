@@ -9,7 +9,7 @@ Also includes a CLI tool for Raspberry Pi revision code details display.
 ## CLI Installation
 
 ```sh
-go install github.com/antichris/go-pirev@latest
+go install github.com/antichris/go-pirev/cmd/pirev@latest
 ```
 
 ## License
