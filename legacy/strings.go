@@ -32,9 +32,9 @@ func _() {
 	_ = x[M512-1]
 }
 
-const _Memory_name = "256MB512MB"
+const _Memory_name = "256 MB512 MB"
 
-var _Memory_index = [...]uint8{0, 5, 10}
+var _Memory_index = [...]uint8{0, 6, 12}
 
 func (i Memory) String() string {
 	if i >= Memory(len(_Memory_index)-1) {

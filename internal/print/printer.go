@@ -42,7 +42,7 @@ func (p Printer) Print(w io.Writer, i pirev.Info) (n int, e error) {
 func formatMemsize(v uint) string {
 	const k = 1 << 10 // 1024
 	if v < k {
-		return fmt.Sprintf("%vMB", v)
+		return fmt.Sprintf("%v MB", v)
 	}
-	return fmt.Sprintf("%vGB", float32(v)/k)
+	return fmt.Sprintf("%v GB", float32(v)/k)
 }

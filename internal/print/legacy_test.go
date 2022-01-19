@@ -19,7 +19,7 @@ func TestLegacyPrinter_Print(t *testing.T) {
 	}
 	wantOut := `                  Model: CM1
                Revision: 5.5
-            Memory size: 512MB
+            Memory size: 512 MB
            Manufacturer: Qisda
 New-style revision code: false
 `

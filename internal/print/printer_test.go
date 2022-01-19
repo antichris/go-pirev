@@ -24,7 +24,7 @@ func TestPrinter_Print(t *testing.T) {
 		},
 		wOut: `                          Model: Internal use only
                        Revision: 1.13
-                    Memory size: 1GB
+                    Memory size: 1 GB
                       Processor: BCM2711
                    Manufacturer: Stadium
         New-style revision code: false
@@ -39,7 +39,7 @@ Warranty voided by overclocking: false
 		},
 		wOut: `                          Model: A
                        Revision: 1.0
-                    Memory size: 1023MB
+                    Memory size: 1023 MB
                       Processor: BCM2835
                    Manufacturer: Sony UK
         New-style revision code: false

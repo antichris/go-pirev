@@ -38,10 +38,10 @@ func TestMemory_String(t *testing.T) {
 		v Memory
 		w string
 	}{{
-		w: "256MB",
+		w: "256 MB",
 	}, {
 		v: M512,
-		w: "512MB",
+		w: "512 MB",
 	}, {
 		v: 2,
 		w: "Memory(2)",
