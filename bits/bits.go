@@ -1,4 +1,4 @@
-//go:generate stringer -type=Field
+//go:generate go run golang.org/x/tools/cmd/stringer -type=Field
 
 // Package bits does the low (bit-)level parsing and assembly of
 // new-style Raspberry Pi revision codes.

@@ -1,4 +1,4 @@
-//go:generate stringer -output=strings.go -type=Manufacturer,Memory -linecomment
+//go:generate go run golang.org/x/tools/cmd/stringer -output=strings.go -type=Manufacturer,Memory -linecomment
 
 // Package legacy describes Raspberry Pi old-style revision codes.
 package legacy
