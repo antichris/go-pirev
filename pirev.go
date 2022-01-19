@@ -86,4 +86,3 @@ const (
 	Embest2 // Embest
 	Stadium
 )
-const revBase = 16 // The number base used in revision codes.

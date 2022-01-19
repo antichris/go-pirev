@@ -77,7 +77,7 @@ func printUsage(wr io.Writer, args []string) {
 	}
 }
 
-const revBase = 16
+const revBase = 16 // The number base used in revision codes.
 
 func printUsageWithError(wr io.Writer, wrErr io.Writer, args []string, err error) {
 	if _, err := fmt.Fprintln(wrErr, err); err != nil {
