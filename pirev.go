@@ -71,12 +71,14 @@ const (
 	FourHundred // 400
 	CM4
 )
+
 const (
 	BCM2835 Processor = iota
 	BCM2836
 	BCM2837
 	BCM2711
 )
+
 const (
 	SonyUK Manufacturer = iota // Sony UK
 	Egoman

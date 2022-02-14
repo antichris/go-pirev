@@ -31,6 +31,7 @@ func TestManufacturer_String(t *testing.T) {
 		})
 	}
 }
+
 func TestProcessor_String(t *testing.T) {
 	t.Parallel()
 	tests := []struct {
@@ -54,6 +55,7 @@ func TestProcessor_String(t *testing.T) {
 		})
 	}
 }
+
 func TestModel_String(t *testing.T) {
 	t.Parallel()
 	tests := []struct {

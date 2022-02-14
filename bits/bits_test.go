@@ -88,7 +88,9 @@ func TestAssemble(t *testing.T) {
 	}
 }
 
-const rev = 0xc03112
-const revFirstBit = 0x80000000
-const BCM2711 = 3
-const FourB = 0x11
+const (
+	rev         = 0xc03112
+	revFirstBit = 0x80000000
+	BCM2711     = 3
+	FourB       = 0x11
+)

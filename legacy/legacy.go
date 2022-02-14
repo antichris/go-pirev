@@ -66,10 +66,12 @@ const (
 	BPlus = Model(pirev.BPlus) // B+
 	CM1   = Model(pirev.CM1)
 )
+
 const (
 	M256 Memory = iota // 256 MB
 	M512               // 512 MB
 )
+
 const (
 	Egoman Manufacturer = iota
 	SonyUK              // Sony UK

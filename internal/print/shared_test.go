@@ -55,7 +55,7 @@ func Test_customizeLabels(t *testing.T) {
 
 	type ss = []string
 	const f = First
-	var fStr = f.String()
+	fStr := f.String()
 
 	tests := []struct {
 		custom ss
