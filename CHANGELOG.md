@@ -3,6 +3,14 @@
 This project adheres to [Semantic Versioning][semver2].
 
 
+## 0.2.1
+
+### Fixed
+
+- The package name in `tools.go`
+- Misspelling in a comment in `cmd/pirev/main.go`
+
+
 ## 0.2.0
 
 ### Added
