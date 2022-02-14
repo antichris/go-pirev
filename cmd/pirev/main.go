@@ -87,7 +87,7 @@ func printUsageWithError(wr io.Writer, wrErr io.Writer, args []string, err error
 }
 
 const (
-	// ExitOK is the default exit code and means that no errors occured.
+	// ExitOK is the default exit code and means that no errors occurred.
 	ExitOK = iota
 	// ExitParseErr means arg couldn't be parsed as a hexadecimal number.
 	ExitParseErr
