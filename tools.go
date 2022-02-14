@@ -1,6 +1,6 @@
 //go:build tools
 
-package tools
+package pirev
 
 import (
 	_ "golang.org/x/tools/cmd/stringer"
