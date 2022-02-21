@@ -77,13 +77,16 @@ func TestAssemble(t *testing.T) {
 		tt := tt
 		t.Run(fmt.Sprintf("parts=%v", tt.parts), func(t *testing.T) {
 			t.Parallel()
+
 			got, err := Assemble(tt.parts)
+
+			req := require.New(t)
 			if tt.wErr != "" {
-				require.EqualError(t, err, tt.wErr)
+				req.EqualError(err, tt.wErr)
 			} else {
-				require.NoError(t, err)
+				req.NoError(err)
 			}
-			require.Equal(t, tt.want, got)
+			req.Equal(tt.want, got)
 		})
 	}
 }

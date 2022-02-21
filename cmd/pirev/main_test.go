@@ -29,10 +29,11 @@ func Test_main(t *testing.T) {
 
 	run := main
 
-	require.NotPanics(t, run)
-	require.Equal(t, wantExit, exitCode)
-	require.Contains(t, wrOut.(fmt.Stringer).String(), wantOut)
-	require.Contains(t, wrErr.(fmt.Stringer).String(), wantErr)
+	req := require.New(t)
+	req.NotPanics(run)
+	req.Equal(wantExit, exitCode)
+	req.Contains(wrOut.(fmt.Stringer).String(), wantOut)
+	req.Contains(wrErr.(fmt.Stringer).String(), wantErr)
 }
 
 func Test_trueMain(t *testing.T) {
@@ -101,14 +102,15 @@ func Test_trueMain(t *testing.T) {
 				exitCode = trueMain(wrOut, wrErr, tt.args)
 			}
 
+			req := require.New(t)
 			if tt.wPanic != "" {
-				require.PanicsWithError(t, tt.wPanic, run)
+				req.PanicsWithError(tt.wPanic, run)
 				return
 			}
-			require.NotPanics(t, run)
-			require.Equal(t, tt.wExit, exitCode)
-			require.Contains(t, wrOut.String(), tt.wOut)
-			require.Contains(t, wrErr.String(), tt.wErr)
+			req.NotPanics(run)
+			req.Equal(tt.wExit, exitCode)
+			req.Contains(wrOut.String(), tt.wOut)
+			req.Contains(wrErr.String(), tt.wErr)
 		})
 	}
 }

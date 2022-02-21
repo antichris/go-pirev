@@ -34,13 +34,16 @@ func TestDescribe(t *testing.T) {
 		tt := tt
 		t.Run(fmt.Sprintf("rev=%04x", tt.rev), func(t *testing.T) {
 			t.Parallel()
+
 			got, err := Describe(tt.rev)
+
+			req := require.New(t)
 			if tt.wErr != nil {
-				require.ErrorIs(t, err, tt.wErr)
+				req.ErrorIs(err, tt.wErr)
 			} else {
-				require.NoError(t, err)
+				req.NoError(err)
 			}
-			require.Equal(t, tt.want, got)
+			req.Equal(tt.want, got)
 		})
 	}
 }

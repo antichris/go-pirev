@@ -26,12 +26,13 @@ func Test_erryStrBuilder_Write(t *testing.T) {
 
 			_, err := b.Write([]byte(tt.str))
 
+			req := require.New(t)
 			if tt.wErr != "" {
-				require.EqualError(t, err, tt.wErr)
+				req.EqualError(err, tt.wErr)
 			} else {
-				require.NoError(t, err)
+				req.NoError(err)
 			}
-			require.Equal(t, tt.wStr, b.String())
+			req.Equal(tt.wStr, b.String())
 		})
 	}
 }

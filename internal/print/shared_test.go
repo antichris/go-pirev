@@ -39,13 +39,14 @@ func Test_printer_Print(t *testing.T) {
 
 			gotN, err := p.Print(out, tt.order, vs)
 
+			req := require.New(t)
 			if tt.wErr != "" {
-				require.EqualError(t, err, tt.wErr)
+				req.EqualError(err, tt.wErr)
 			} else {
-				require.NoError(t, err)
+				req.NoError(err)
 			}
-			require.Equal(t, tt.wN, gotN)
-			require.Equal(t, tt.wOut, out.String())
+			req.Equal(tt.wN, gotN)
+			req.Equal(tt.wOut, out.String())
 		})
 	}
 }
