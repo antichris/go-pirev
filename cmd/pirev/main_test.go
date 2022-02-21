@@ -26,9 +26,10 @@ func Test_main(t *testing.T) {
 		wantOut  = "Usage:  foo"
 		wantErr  = `parsing "bar": invalid syntax`
 	)
-	require.NotPanics(t, func() {
-		main()
-	})
+
+	run := main
+
+	require.NotPanics(t, run)
 	require.Equal(t, wantExit, exitCode)
 	require.Contains(t, wrOut.(fmt.Stringer).String(), wantOut)
 	require.Contains(t, wrErr.(fmt.Stringer).String(), wantErr)
