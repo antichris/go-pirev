@@ -87,7 +87,7 @@ const (
 	Egoman
 	Embest
 	SonyJapan // Sony Japan
-	// Embest2, if the docs can be believed, is the same as Embest.
+	// Embest2 is the same as Embest, if the docs can be believed.
 	Embest2 // Embest
 	Stadium
 )
