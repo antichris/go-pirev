@@ -30,6 +30,7 @@ type Values = []Value
 // The Value of a Field in a revision code.
 type Value uint8
 
+// Field constants.
 const (
 	NoOvervoltage   Field = iota // Overvoltage disallowed
 	NoOTPPrograming              // OTP programming disallowed

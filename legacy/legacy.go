@@ -59,6 +59,7 @@ type (
 	Manufacturer uint8
 )
 
+// Legacy model constants.
 const (
 	A     = Model(pirev.A)
 	B     = Model(pirev.B)
@@ -67,11 +68,13 @@ const (
 	CM1   = Model(pirev.CM1)
 )
 
+// Memory size constants.
 const (
 	M256 Memory = iota // 256 MB
 	M512               // 512 MB
 )
 
+// Legacy manufacturer constants.
 const (
 	Egoman Manufacturer = iota
 	SonyUK              // Sony UK

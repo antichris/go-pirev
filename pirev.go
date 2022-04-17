@@ -48,6 +48,7 @@ type (
 	Manufacturer uint8
 )
 
+// Model constants.
 const (
 	A Model = iota
 	B
@@ -72,6 +73,7 @@ const (
 	CM4
 )
 
+// Processor type constants.
 const (
 	BCM2835 Processor = iota
 	BCM2836
@@ -79,6 +81,7 @@ const (
 	BCM2711
 )
 
+// Manufacturer constants.
 const (
 	SonyUK Manufacturer = iota // Sony UK
 	Egoman
