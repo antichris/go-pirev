@@ -68,14 +68,14 @@ func _() {
 	_ = x[Internal-15]
 	_ = x[CM3Plus-16]
 	_ = x[FourB-17]
-	_ = x[_Unspecified2-18]
+	_ = x[Zero2W-18]
 	_ = x[FourHundred-19]
 	_ = x[CM4-20]
 }
 
-const _Model_name = "ABA+B+2BAlpha (early prototype)CM1_Unspecified03BZeroCM3_Unspecified1Zero W3B+3A+Internal use onlyCM3+4B_Unspecified2400CM4"
+const _Model_name = "ABA+B+2BAlpha (early prototype)CM1_Unspecified03BZeroCM3_Unspecified1Zero W3B+3A+Internal use onlyCM3+4BZero 2 W400CM4"
 
-var _Model_index = [...]uint8{0, 1, 2, 4, 6, 8, 31, 34, 47, 49, 53, 56, 69, 75, 78, 81, 98, 102, 104, 117, 120, 123}
+var _Model_index = [...]uint8{0, 1, 2, 4, 6, 8, 31, 34, 47, 49, 53, 56, 69, 75, 78, 81, 98, 102, 104, 112, 115, 118}
 
 func (i Model) String() string {
 	if i >= Model(len(_Model_index)-1) {

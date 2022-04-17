@@ -62,13 +62,13 @@ const (
 	Zero
 	CM3
 	_Unspecified1
-	ZeroW      // Zero W
-	ThreeBPlus // 3B+
-	ThreeAPlus // 3A+
-	Internal   // Internal use only
-	CM3Plus    // CM3+
-	FourB      // 4B
-	_Unspecified2
+	ZeroW       // Zero W
+	ThreeBPlus  // 3B+
+	ThreeAPlus  // 3A+
+	Internal    // Internal use only
+	CM3Plus     // CM3+
+	FourB       // 4B
+	Zero2W      // Zero 2 W
 	FourHundred // 400
 	CM4
 )
