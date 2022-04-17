@@ -11,11 +11,11 @@ type printer struct {
 	labels []string
 }
 
-func (p printer) Print(w io.Writer, order Fields, s values) (n int, e error) {
+func (p printer) Print(wr io.Writer, order Fields, s values) (n int, e error) {
 	format := fmt.Sprintf("%%%ds: %%v\n", labelWidth(p.labels, order))
 
 	for _, f := range order {
-		_n, e := fmt.Fprintf(w, format, p.labels[f], s[f])
+		_n, e := fmt.Fprintf(wr, format, p.labels[f], s[f])
 		n += _n
 		if e != nil {
 			return n, e
