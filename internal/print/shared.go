@@ -12,10 +12,9 @@ type printer struct {
 }
 
 func (p printer) Print(wr io.Writer, order Fields, s values) (n int, e error) {
-	format := fmt.Sprintf("%%%ds: %%v\n", labelWidth(p.labels, order))
-
+	w := labelWidth(p.labels, order)
 	for _, f := range order {
-		_n, e := fmt.Fprintf(wr, format, p.labels[f], s[f])
+		_n, e := fmt.Fprintf(wr, "%*s: %v\n", w, p.labels[f], s[f])
 		n += _n
 		if e != nil {
 			return n, e
