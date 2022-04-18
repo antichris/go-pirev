@@ -24,7 +24,9 @@ go install github.com/antichris/go-pirev/cmd/pirev@latest
 
 ## License
 
-The source code of this project is released under [Mozilla Public License Version 2.0][mpl]. See [LICENSE](LICENSE).
+The source code of this project is released under [Mozilla Public License Version 2.0][mpl]. See [LICENSE].
 
 [mpl]: https://www.mozilla.org/en-US/MPL/2.0/
 	"Mozilla Public License, version 2.0"
+
+[license]: LICENSE
