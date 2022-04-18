@@ -2,9 +2,9 @@
 
 ## Raspberry Pi revision code parser in Go
 
-Parse and extract hardware information from a Raspberry Pi revision code as structured data or raw bit values.
+A Go library for parsing and extracting hardware information from a Raspberry Pi revision code as structured data or raw bit values.
 
-Also includes a CLI tool for Raspberry Pi revision code details display.
+Also includes a basic CLI tool that uses this library to display the details of a Raspberry Pi revision code.
 
 ## Installation
 
