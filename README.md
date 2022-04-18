@@ -6,7 +6,17 @@ Parse and extract hardware information from a Raspberry Pi revision code as stru
 
 Also includes a CLI tool for Raspberry Pi revision code details display.
 
-## CLI Installation
+## Installation
+
+### Library
+
+In the directory of your module run:
+
+```sh
+go get github.com/antichris/go-pirev@latest
+```
+
+### CLI tool
 
 ```sh
 go install github.com/antichris/go-pirev/cmd/pirev@latest
