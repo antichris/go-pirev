@@ -3,6 +3,25 @@
 This project adheres to [Semantic Versioning][semver2].
 
 
+## 0.3.0
+
+### Added
+
+- The Zero 2 W model
+- Badges and library installation instructions to the README
+
+### Changed
+
+- Code formatting using [`gofumpt`](https://github.com/mvdan/gofumpt)
+- The location of `tools.go` from the module root to an internal package
+
+### Fixed
+
+- Printers to use the proper Go technique for specifying the label width
+- Tests to instantiate `require` assertions where that makes sense
+- Miscellaneous minor code and documentation legibility issues
+
+
 ## 0.2.1
 
 ### Fixed
