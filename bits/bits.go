@@ -15,7 +15,7 @@ func Parse(r Code) Values {
 	s := make(Values, NumTotal)
 	// HACK Seems crazy, but that's how integer overflow works.
 	for f := Last; f <= Last; f-- {
-		s[f] = Value(r & Code(f.Bitmask()))
+		s[f] = Value(r) & f.Bitmask()
 		r >>= f.Bitsize()
 	}
 	return s
@@ -62,14 +62,14 @@ const (
 type Field uint
 
 // Bitmask is an all-ones mask derived from the bitsize of the Field.
-func (f Field) Bitmask() uint8 { return bitmasks[f] }
+func (f Field) Bitmask() Value { return bitmasks[f] }
 
 // Bitsize is the length of Field value in number of bits.
 func (f Field) Bitsize() uint8 { return bitsizes[f] }
 
 // Validate returns error if v is not a valid Value for the Field.
 func (f Field) Validate(v Value) (err error) {
-	if v&^Value(f.Bitmask()) != 0 {
+	if v&^f.Bitmask() != 0 {
 		err = fmt.Errorf(
 			"field %s takes %d bit value, %#x is %d bits",
 			f, f.Bitsize(), v, bits.Len8(uint8(v)),
@@ -105,7 +105,7 @@ func Assemble(s Values) (r Code, err error) {
 var ErrOverflow = errors.New("more Values than NumTotal")
 
 // bitmasks of Fields.
-var bitmasks = func(s [NumTotal]uint8) (m [NumTotal]uint8) {
+var bitmasks = func(s [NumTotal]uint8) (m [NumTotal]Value) {
 	// TODO Verify that the array argument is not copied here.
 	for i, l := range s {
 		m[i] = 1<<l - 1
