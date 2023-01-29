@@ -71,6 +71,7 @@ const (
 	Zero2W      // Zero 2 W
 	FourHundred // 400
 	CM4
+	CM4S
 )
 
 // Processor type constants.
