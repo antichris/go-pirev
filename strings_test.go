@@ -19,8 +19,8 @@ func TestManufacturer_String(t *testing.T) {
 		v: Embest2,
 		w: "Embest",
 	}, {
-		v: 6,
-		w: "Manufacturer(6)",
+		v: ^Manufacturer(0),
+		w: "Manufacturer(255)",
 	}}
 	for _, tt := range tests {
 		tt := tt
@@ -43,8 +43,8 @@ func TestProcessor_String(t *testing.T) {
 		v: BCM2711,
 		w: "BCM2711",
 	}, {
-		v: 4,
-		w: "Processor(4)",
+		v: ^Processor(0),
+		w: "Processor(255)",
 	}}
 	for _, tt := range tests {
 		tt := tt
@@ -67,8 +67,8 @@ func TestModel_String(t *testing.T) {
 		v: FourB,
 		w: "4B",
 	}, {
-		v: 21,
-		w: "Model(21)",
+		v: ^Model(0),
+		w: "Model(255)",
 	}}
 	for _, tt := range tests {
 		tt := tt
