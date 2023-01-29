@@ -3,6 +3,20 @@
 This project adheres to [Semantic Versioning][semver2].
 
 
+## [0.4.0] - 2023-01-29
+
+### Added
+
+- The CM4S model
+
+### Changed
+
+- `bits.Field` bitmask type to `bits.Value` from `uint8`
+- `strings_test` failure cases to use the maximum value of each type
+- `go:generate` directives to come after the `package` declarations
+- Format of this changelog to be better aligned with [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+
+
 ## [0.3.0] - 2022-04-22
 
 ### Added
@@ -69,6 +83,7 @@ Initial release
 
 [semver2]: https://semver.org/spec/v2.0.0.html
 
+[0.4.0]: https://github.com/antichris/go-pirev/releases/v0.4.0
 [0.3.0]: https://github.com/antichris/go-pirev/releases/v0.3.0
 [0.2.1]: https://github.com/antichris/go-pirev/releases/v0.2.1
 [0.2.0]: https://github.com/antichris/go-pirev/releases/v0.2.0
