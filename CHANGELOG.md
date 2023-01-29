@@ -3,7 +3,7 @@
 This project adheres to [Semantic Versioning][semver2].
 
 
-## 0.3.0
+## [0.3.0] - 2022-04-22
 
 ### Added
 
@@ -22,7 +22,7 @@ This project adheres to [Semantic Versioning][semver2].
 - Miscellaneous minor code and documentation legibility issues
 
 
-## 0.2.1
+## [0.2.1] - 2022-02-14
 
 ### Fixed
 
@@ -30,7 +30,7 @@ This project adheres to [Semantic Versioning][semver2].
 - Misspelling in a comment in `cmd/pirev/main.go`
 
 
-## 0.2.0
+## [0.2.0] - 2022-01-19
 
 ### Added
 
@@ -53,7 +53,7 @@ This project adheres to [Semantic Versioning][semver2].
 - Name of the `print` package in its documentation comment
 
 
-## 0.1.1
+## [0.1.1] - 2021-05-14
 
 ### Fixed
 
@@ -62,9 +62,15 @@ This project adheres to [Semantic Versioning][semver2].
 	- Capitalization, wording and other minor fixes in `pirev/bits`
 
 
-## 0.1.0
+## [0.1.0] - 2021-05-14
 
 Initial release
 
 
 [semver2]: https://semver.org/spec/v2.0.0.html
+
+[0.3.0]: https://github.com/antichris/go-pirev/releases/v0.3.0
+[0.2.1]: https://github.com/antichris/go-pirev/releases/v0.2.1
+[0.2.0]: https://github.com/antichris/go-pirev/releases/v0.2.0
+[0.1.1]: https://github.com/antichris/go-pirev/releases/v0.1.1
+[0.1.0]: https://github.com/antichris/go-pirev/releases/v0.1.0
