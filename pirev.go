@@ -1,7 +1,7 @@
-//go:generate go run golang.org/x/tools/cmd/stringer -output=strings.go -type=Manufacturer,Processor,Model -linecomment
-
 // Package pirev parses Raspberry Pi new-style revision codes.
 package pirev
+
+//go:generate go run golang.org/x/tools/cmd/stringer -output=strings.go -type=Manufacturer,Processor,Model -linecomment
 
 import "github.com/antichris/go-pirev/bits"
 
