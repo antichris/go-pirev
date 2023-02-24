@@ -36,7 +36,7 @@ func labelWidth(labels []string, fields Fields) (n int) {
 // Fields alias bits.Field slice.
 type Fields = []bits.Field
 
-type values = []interface{}
+type values = []any
 
 // DefaultOrder of fields in output.
 var DefaultOrder = Fields{
