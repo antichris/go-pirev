@@ -11,7 +11,7 @@ import (
 )
 
 func TestPrinter_Print(t *testing.T) {
-	tests := []struct {
+	for _, tt := range []struct {
 		i    pirev.Info
 		wOut string
 	}{{
@@ -48,8 +48,7 @@ Warranty voided by overclocking: false
      OTP programming disallowed: false
          Overvoltage disallowed: false
 `,
-	}}
-	for _, tt := range tests {
+	}} {
 		t.Run("", func(t *testing.T) {
 			p := NewPrinter()
 			out := &strings.Builder{}

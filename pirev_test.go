@@ -11,7 +11,7 @@ import (
 
 func TestIdentify(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		rev  Code
 		want Info
 	}{{
@@ -28,8 +28,7 @@ func TestIdentify(t *testing.T) {
 			NoOTPPrograming: true,
 			NoOvervoltage:   true,
 		},
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf("rev=%x", tt.rev), func(t *testing.T) {
 			t.Parallel()

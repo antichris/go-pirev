@@ -11,7 +11,7 @@ import (
 
 func TestDescribe(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		rev  uint16
 		want Info
 		wErr error
@@ -29,8 +29,7 @@ func TestDescribe(t *testing.T) {
 			Memory:       M256,
 			Manufacturer: Embest,
 		},
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf("rev=%04x", tt.rev), func(t *testing.T) {
 			t.Parallel()

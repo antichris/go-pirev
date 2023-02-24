@@ -10,7 +10,7 @@ import (
 )
 
 func Test_erryStrBuilder_Write(t *testing.T) {
-	tests := []struct {
+	for _, tt := range []struct {
 		str, err   string
 		wStr, wErr string
 	}{{
@@ -19,8 +19,7 @@ func Test_erryStrBuilder_Write(t *testing.T) {
 	}, {
 		str:  snap,
 		wStr: snap,
-	}}
-	for _, tt := range tests {
+	}} {
 		t.Run(fmt.Sprintf("str=%s/err=%s", tt.str, tt.err), func(t *testing.T) {
 			b := &erryStrBuilder{err: tt.err}
 

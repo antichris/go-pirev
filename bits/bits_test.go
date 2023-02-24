@@ -11,7 +11,7 @@ import (
 
 func TestParse(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		rev  Code
 		want Values
 	}{{
@@ -29,8 +29,7 @@ func TestParse(t *testing.T) {
 			First: 1,
 			Last:  0,
 		},
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf("rev=%#x", tt.rev), func(t *testing.T) {
 			t.Parallel()
@@ -42,7 +41,7 @@ func TestParse(t *testing.T) {
 
 func TestAssemble(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		parts Values
 		want  Code
 		wErr  string
@@ -72,8 +71,7 @@ func TestAssemble(t *testing.T) {
 			Revision:    2,
 		},
 		want: rev,
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf("parts=%v", tt.parts), func(t *testing.T) {
 			t.Parallel()

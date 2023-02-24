@@ -41,7 +41,7 @@ func Test_trueMain(t *testing.T) {
 
 	type ss = []string
 
-	tests := []struct {
+	for _, tt := range []struct {
 		args   ss
 		outErr string
 		errErr string
@@ -87,8 +87,7 @@ func Test_trueMain(t *testing.T) {
 		args:  ss{"", "15"},
 		wExit: ExitOK,
 		wOut:  "New-style revision code: false",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf(
 			"arg=%q/wPanic=%s", tt.args, tt.wPanic,

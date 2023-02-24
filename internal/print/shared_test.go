@@ -15,7 +15,7 @@ func Test_printer_Print(t *testing.T) {
 	p := printer{labels: labels}
 	vs := values{First: true}
 
-	tests := []struct {
+	for _, tt := range []struct {
 		name   string
 		order  Fields
 		outErr string
@@ -30,8 +30,7 @@ func Test_printer_Print(t *testing.T) {
 		order: Fields{First},
 		wN:    20,
 		wOut:  "NoOvervoltage: true\n",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(tt.name, func(t *testing.T) {
 			t.Parallel()
@@ -58,7 +57,7 @@ func Test_customizeLabels(t *testing.T) {
 	const f = First
 	fStr := f.String()
 
-	tests := []struct {
+	for _, tt := range []struct {
 		custom ss
 		want   string
 	}{{
@@ -70,8 +69,7 @@ func Test_customizeLabels(t *testing.T) {
 	}, {
 		custom: ss{f: snap},
 		want:   snap,
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(fmt.Sprintf("s=%q", tt.custom), func(t *testing.T) {
 			t.Parallel()

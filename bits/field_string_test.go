@@ -10,7 +10,7 @@ import (
 
 func TestID_String(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		f Field
 		w string
 	}{{
@@ -21,8 +21,7 @@ func TestID_String(t *testing.T) {
 	}, {
 		f: 13,
 		w: "Field(13)",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(tt.f.String(), func(t *testing.T) {
 			t.Parallel()

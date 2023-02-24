@@ -10,7 +10,7 @@ import (
 
 func TestModel_String(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		v Model
 		w string
 	}{{
@@ -21,8 +21,7 @@ func TestModel_String(t *testing.T) {
 	}, {
 		v: 0xff,
 		w: "Model(255)",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(tt.w, func(t *testing.T) {
 			t.Parallel()
@@ -34,7 +33,7 @@ func TestModel_String(t *testing.T) {
 
 func TestMemory_String(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		v Memory
 		w string
 	}{{
@@ -45,8 +44,7 @@ func TestMemory_String(t *testing.T) {
 	}, {
 		v: 2,
 		w: "Memory(2)",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(tt.w, func(t *testing.T) {
 			t.Parallel()
@@ -58,7 +56,7 @@ func TestMemory_String(t *testing.T) {
 
 func TestManufacturer_String(t *testing.T) {
 	t.Parallel()
-	tests := []struct {
+	for _, tt := range []struct {
 		v Manufacturer
 		w string
 	}{{
@@ -69,8 +67,7 @@ func TestManufacturer_String(t *testing.T) {
 	}, {
 		v: 4,
 		w: "Manufacturer(4)",
-	}}
-	for _, tt := range tests {
+	}} {
 		tt := tt
 		t.Run(tt.w, func(t *testing.T) {
 			t.Parallel()
