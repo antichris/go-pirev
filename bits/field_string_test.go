@@ -10,23 +10,16 @@ import (
 
 func TestID_String(t *testing.T) {
 	t.Parallel()
-	for _, tt := range []struct {
-		f Field
-		w string
-	}{{
-		w: "NoOvervoltage",
-	}, {
-		f: Memory,
-		w: "Memory",
-	}, {
-		f: 13,
-		w: "Field(13)",
-	}} {
-		tt := tt
-		t.Run(tt.f.String(), func(t *testing.T) {
+	for v, want := range map[Field]string{
+		0:      "NoOvervoltage",
+		Memory: "Memory",
+		13:     "Field(13)",
+	} {
+		v, want := v, want
+		t.Run(want, func(t *testing.T) {
+			t.Helper()
 			t.Parallel()
-			got := tt.f.String()
-			require.Equal(t, tt.w, got)
+			require.Equal(t, want, v.String())
 		})
 	}
 }

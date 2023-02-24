@@ -1,6 +1,7 @@
 package pirev_test
 
 import (
+	"fmt"
 	"testing"
 
 	. "github.com/antichris/go-pirev"
@@ -10,69 +11,42 @@ import (
 
 func TestManufacturer_String(t *testing.T) {
 	t.Parallel()
-	for _, tt := range []struct {
-		v Manufacturer
-		w string
-	}{{
-		w: "Sony UK",
-	}, {
-		v: Embest2,
-		w: "Embest",
-	}, {
-		v: ^Manufacturer(0),
-		w: "Manufacturer(255)",
-	}} {
-		tt := tt
-		t.Run(tt.w, func(t *testing.T) {
-			t.Parallel()
-			got := tt.v.String()
-			require.Equal(t, tt.w, got)
-		})
+	for v, want := range map[Manufacturer]string{
+		0:                "Sony UK",
+		Embest2:          "Embest",
+		^Manufacturer(0): "Manufacturer(255)",
+	} {
+		testStringer(t, v, want)
 	}
 }
 
 func TestProcessor_String(t *testing.T) {
 	t.Parallel()
-	for _, tt := range []struct {
-		v Processor
-		w string
-	}{{
-		w: "BCM2835",
-	}, {
-		v: BCM2711,
-		w: "BCM2711",
-	}, {
-		v: ^Processor(0),
-		w: "Processor(255)",
-	}} {
-		tt := tt
-		t.Run(tt.w, func(t *testing.T) {
-			t.Parallel()
-			got := tt.v.String()
-			require.Equal(t, tt.w, got)
-		})
+	for v, want := range map[Processor]string{
+		0:             "BCM2835",
+		BCM2711:       "BCM2711",
+		^Processor(0): "Processor(255)",
+	} {
+		testStringer(t, v, want)
 	}
 }
 
 func TestModel_String(t *testing.T) {
 	t.Parallel()
-	for _, tt := range []struct {
-		v Model
-		w string
-	}{{
-		w: "A",
-	}, {
-		v: FourB,
-		w: "4B",
-	}, {
-		v: ^Model(0),
-		w: "Model(255)",
-	}} {
-		tt := tt
-		t.Run(tt.w, func(t *testing.T) {
-			t.Parallel()
-			got := tt.v.String()
-			require.Equal(t, tt.w, got)
-		})
+	for v, want := range map[Model]string{
+		0:         "A",
+		FourB:     "4B",
+		^Model(0): "Model(255)",
+	} {
+		testStringer(t, v, want)
 	}
+}
+
+func testStringer(t *testing.T, v fmt.Stringer, want string) bool {
+	t.Helper()
+	return t.Run(want, func(t *testing.T) {
+		t.Helper()
+		t.Parallel()
+		require.Equal(t, want, v.String())
+	})
 }
