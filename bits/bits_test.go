@@ -12,8 +12,8 @@ import (
 func TestParse(t *testing.T) {
 	t.Parallel()
 	for _, tt := range []struct {
-		rev  Code
 		want Values
+		rev  Code
 	}{{
 		rev: rev,
 		want: Values{
@@ -42,9 +42,9 @@ func TestParse(t *testing.T) {
 func TestAssemble(t *testing.T) {
 	t.Parallel()
 	for _, tt := range []struct {
+		wErr  string
 		parts Values
 		want  Code
-		wErr  string
 	}{{
 		want: 0,
 	}, {

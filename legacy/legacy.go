@@ -29,9 +29,9 @@ type RevCode = uint16
 
 // Info about hardware with an old-style revision code.
 type Info struct {
-	Model        Model
 	Revision     Revision
 	Memory       Memory
+	Model        Model
 	Manufacturer Manufacturer
 }
 
@@ -85,24 +85,24 @@ const (
 var known = [Last + 1]Info{
 	// 0x0000: {},
 	// 0x0001: {},
-	0x0002: {B, 1.0, M256, Egoman},
-	0x0003: {B, 1.0, M256, Egoman},
-	0x0004: {B, 2.0, M256, SonyUK},
-	0x0005: {B, 2.0, M256, Qisda},
-	0x0006: {B, 2.0, M256, Egoman},
-	0x0007: {A, 2.0, M256, Egoman},
-	0x0008: {A, 2.0, M256, SonyUK},
-	0x0009: {A, 2.0, M256, Qisda},
+	0x0002: {1.0, M256, B, Egoman},
+	0x0003: {1.0, M256, B, Egoman},
+	0x0004: {2.0, M256, B, SonyUK},
+	0x0005: {2.0, M256, B, Qisda},
+	0x0006: {2.0, M256, B, Egoman},
+	0x0007: {2.0, M256, A, Egoman},
+	0x0008: {2.0, M256, A, SonyUK},
+	0x0009: {2.0, M256, A, Qisda},
 	// 0x000a: {},
 	// 0x000b: {},
 	// 0x000c: {},
-	0x000d: {B, 2.0, M512, Egoman},
-	0x000e: {B, 2.0, M512, SonyUK},
-	0x000f: {B, 2.0, M512, Egoman},
-	0x0010: {BPlus, 1.2, M512, SonyUK},
-	0x0011: {CM1, 1.0, M512, SonyUK},
-	0x0012: {APlus, 1.1, M256, SonyUK},
-	0x0013: {BPlus, 1.2, M512, Embest},
-	0x0014: {CM1, 1.0, M512, Embest},
-	0x0015: {APlus, 1.1, M256, Embest}, // or M512: docs are ambiguous.
+	0x000d: {2.0, M512, B, Egoman},
+	0x000e: {2.0, M512, B, SonyUK},
+	0x000f: {2.0, M512, B, Egoman},
+	0x0010: {1.2, M512, BPlus, SonyUK},
+	0x0011: {1.0, M512, CM1, SonyUK},
+	0x0012: {1.1, M256, APlus, SonyUK},
+	0x0013: {1.2, M512, BPlus, Embest},
+	0x0014: {1.0, M512, CM1, Embest},
+	0x0015: {1.1, M256, APlus, Embest}, // or M512: docs are ambiguous.
 }

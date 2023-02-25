@@ -12,9 +12,9 @@ import (
 func TestDescribe(t *testing.T) {
 	t.Parallel()
 	for _, tt := range []struct {
-		rev  uint16
-		want Info
 		wErr error
+		want Info
+		rev  uint16
 	}{{
 		rev:  0x0666,
 		wErr: ErrRevisionOutOfRange,

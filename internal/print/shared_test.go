@@ -17,11 +17,11 @@ func Test_printer_Print(t *testing.T) {
 
 	for _, tt := range []struct {
 		name   string
-		order  Fields
 		outErr string
-		wN     int
 		wErr   string
 		wOut   string
+		order  Fields
+		wN     int
 	}{{
 		order:  Fields{First},
 		outErr: snap,
@@ -58,8 +58,8 @@ func Test_customizeLabels(t *testing.T) {
 	fStr := f.String()
 
 	for _, tt := range []struct {
-		custom ss
 		want   string
+		custom ss
 	}{{
 		custom: nil,
 		want:   fStr,

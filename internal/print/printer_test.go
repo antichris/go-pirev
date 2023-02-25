@@ -12,8 +12,8 @@ import (
 
 func TestPrinter_Print(t *testing.T) {
 	for _, tt := range []struct {
-		i    pirev.Info
 		wOut string
+		i    pirev.Info
 	}{{
 		i: pirev.Info{
 			Model:        pirev.Internal,

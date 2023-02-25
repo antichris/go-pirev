@@ -42,13 +42,13 @@ func Test_trueMain(t *testing.T) {
 	type ss = []string
 
 	for _, tt := range []struct {
-		args   ss
 		outErr string
 		errErr string
-		wExit  int
 		wOut   string
 		wErr   string
 		wPanic string
+		args   ss
+		wExit  int
 	}{{
 		wPanic: "runtime error: index out of range [0] with length 0",
 	}, {
