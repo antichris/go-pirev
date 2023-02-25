@@ -3,6 +3,20 @@
 This project adheres to [Semantic Versioning][semver2].
 
 
+## [0.5.0] - 2023-02-25
+
+### Changed
+
+- Go version in `go.mod` to the oldest stable (1.19)
+- All module dependencies to the latest
+- The order of `struct` fields for reduced memory consumption in
+	- legacy `Info`
+	- tests
+- Table driven test cases to be defined inline, as the parameter for `range`
+- Tests of `Stringer`s to be terser
+- Empty `interface` to be spelled as `any`
+
+
 ## [0.4.0] - 2023-01-29
 
 ### Added
@@ -83,6 +97,7 @@ Initial release
 
 [semver2]: https://semver.org/spec/v2.0.0.html
 
+[0.5.0]: https://github.com/antichris/go-pirev/releases/v0.5.0
 [0.4.0]: https://github.com/antichris/go-pirev/releases/v0.4.0
 [0.3.0]: https://github.com/antichris/go-pirev/releases/v0.3.0
 [0.2.1]: https://github.com/antichris/go-pirev/releases/v0.2.1
